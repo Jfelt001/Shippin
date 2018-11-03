@@ -9,6 +9,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <GLUT/glut.h>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
 
 void display()
 {
@@ -47,4 +50,20 @@ int main(int argc, char** argv)
     myinit();
     glutMainLoop();
     return 0;
+}
+
+void mytitle() {
+    unsigned char string[] = "Battleship: The Game";
+    int w;
+    w = glutBitmapLength(GLUT_BITMAP_8_BY_13, string);
+    glRasterPos2f(0., 0.);
+    glColor(1., 0., 0.);
+    int len = strlen(string);
+    for (int i = 0; i < len; i++) {
+        glutBitmapCharacter(GLUT_BITMAP_8_BY_13, string);
+    }
+
+    
+    
+    
 }
